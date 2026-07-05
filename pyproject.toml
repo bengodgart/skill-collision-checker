@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "skill-collision-checker"
+version = "0.1.0"
+description = "Find trigger-keyword collisions in a Claude Code skill corpus: shared trigger phrases, keyword overlap, shadowed skills, near-duplicate when-to-use wording. Deterministic, stdlib-only, offline, suggest-only."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Ben Godgart" }]
+keywords = ["claude", "claude-code", "skills", "linter", "devtools", "prompt-engineering"]
+dependencies = []
+
+[project.scripts]
+scc = "scc.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/bengodgart/skill-collision-checker"
+
+[tool.setuptools]
+packages = ["scc"]

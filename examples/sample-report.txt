@@ -1,0 +1,28 @@
+Skill collision check
+roots: fixtures/skills
+skills scanned: 8   threshold: 0.30   near-dup ratio: 0.85
+
+Disposition: 3 KEEP, 3 TUNE, 2 COLLISION
+
+  COLLISION  note-taker                   collides with quick-capture (shared: 'capture an idea', capture, idea, later, quick, triage; jaccard 0.59)
+  COLLISION  quick-capture                collides with note-taker (shared: 'capture an idea', capture, idea, later, quick, triage; jaccard 0.59)
+  TUNE       daily-standup                narrow daily-standup's trigger; it is shadowed by standup-recap
+  TUNE       set-reminder                 narrow set-reminder's trigger; it is shadowed by broad-reminder
+  TUNE       standup-recap                when-to-use wording is 94% similar to daily-standup; add a disambiguating clause
+  KEEP       broad-reminder               -
+  KEEP       changelog-writer             -
+  KEEP       deploy-checklist             -
+
+Collision pairs (1)
+  [collision] note-taker <-> quick-capture   jaccard-weighted score 0.59
+      shared trigger phrases: 'capture an idea'
+      shared keywords: capture, idea, later, quick, triage
+
+Shadowed skills (2)
+  [shadowed] set-reminder triggers are a strict subset of broad-reminder's
+      suggestion: narrow set-reminder's trigger; it is shadowed by broad-reminder
+  [shadowed] daily-standup triggers are a strict subset of standup-recap's
+      suggestion: narrow daily-standup's trigger; it is shadowed by standup-recap
+
+Near-duplicate when-to-use wording (1)
+  daily-standup <-> standup-recap   text-similarity ratio 0.94
