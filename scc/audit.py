@@ -93,7 +93,7 @@ def _build_dispositions(scored: list[ScoredSkill], shadows: list[ShadowPair],
             for pair in own_collisions:
                 other = pair.b if pair.a == label else pair.a
                 tokens = _format_tokens(pair.shared_phrases, pair.shared_keywords)
-                parts.append(f"collides with {other} (shared: {tokens}; jaccard {pair.score:.2f})")
+                parts.append(f"collides with {other} (shared: {tokens}; score {pair.score:.2f})")
             dispositions.append(Disposition(skill=label, status=COLLISION, detail="; ".join(parts)))
             continue
 
